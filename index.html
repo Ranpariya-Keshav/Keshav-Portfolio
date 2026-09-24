@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keshav — Creative Front End Developer</title>
+    <meta name="description" content="Keshav — Creative Front End Developer portfolio." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              eldring: ["Eldring", "sans-serif"],
+              "eldring-condensed": ["EldringCondensed", "sans-serif"],
+            },
+            colors: {
+              theme: "#f8f9fa",
+              cream: "#f8f9fa",
+              ink: "#000814",
+              gold: "#f8f9fa",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @font-face {
+        font-family: 'Eldring';
+        src: url('Eldring.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Eldring';
+        src: url('Eldring.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Eldring';
+        src: url('Eldring.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Eldring';
+        src: url('EldringBold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'EldringCondensed';
+        src: url('EldringCondensed.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+      body {
+        font-family: 'Eldring', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: #f8f9fa;
+        color: #000814;
+        overflow-x: hidden;
+      }
+      .nav-link.is-active {
+        color: #dda15e;
+      }
+      .nav-link.is-active::after {
+        transform: scaleX(1);
+        background-color: #dda15e;
+      }
+      .grain {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        opacity: 0.025;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="grain" aria-hidden="true"></div>
+    <a
+      href="#home"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-[#dda15e] focus:px-3 focus:py-2 focus:text-[#000814] focus:font-semibold"
+    >
+      Skip to content
+    </a>
+
+    <header class="fixed inset-x-0 top-0 z-40 border-b border-[#000814]/10 bg-[#f8f9fa]/85 backdrop-blur-md">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
+        <a href="#home" class="text-2xl font-bold tracking-tight text-[#000814] transition-colors hover:text-[#dda15e]">
+          KR
+        </a>
+
+        <button
+          id="menu-btn"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#000814]/15 text-[#000814] transition hover:border-[#dda15e] hover:text-[#dda15e] md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg id="icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="icon-close" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <ul class="hidden items-center gap-8 text-sm font-medium text-[#000814]/80 md:flex">
+          <li>
+            <a class="nav-link relative py-1 transition-colors hover:text-[#dda15e] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[#dda15e] after:transition-transform hover:after:scale-x-100" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="nav-link relative py-1 transition-colors hover:text-[#dda15e] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[#dda15e] after:transition-transform hover:after:scale-x-100" href="#about">About</a>
+          </li>
+          <li>
+            <a class="nav-link relative py-1 transition-colors hover:text-[#dda15e] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[#dda15e] after:transition-transform hover:after:scale-x-100" href="#projects">Projects</a>
+          </li>
+          <li>
+            <a class="nav-link relative py-1 transition-colors hover:text-[#dda15e] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[#dda15e] after:transition-transform hover:after:scale-x-100" href="#contact">Contact</a>
+          </li>
+          <li>
+            <a
+              href="Ranparia%20Keshav.pdf"
+              download="Ranparia_Keshav_CV.pdf"
+              target="_blank"
+              class="inline-flex items-center gap-1.5 rounded-full border border-[#000814]/25 bg-transparent px-4 py-1.5 text-xs font-normal uppercase tracking-wider text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+            >
+              <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Download CV</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="mobile-menu" class="hidden border-t border-[#000814]/10 bg-[#fefae0] px-5 py-4 md:hidden">
+        <ul class="flex flex-col gap-4 text-base font-medium text-[#000814]/80">
+          <li><a class="nav-link mobile-link block py-1 transition-colors hover:text-[#dda15e]" href="#home">Home</a></li>
+          <li><a class="nav-link mobile-link block py-1 transition-colors hover:text-[#dda15e]" href="#about">About</a></li>
+          <li><a class="nav-link mobile-link block py-1 transition-colors hover:text-[#dda15e]" href="#projects">Projects</a></li>
+          <li><a class="nav-link mobile-link block py-1 transition-colors hover:text-[#dda15e]" href="#contact">Contact</a></li>
+          <li class="pt-2">
+            <a
+              href="Ranparia%20Keshav.pdf"
+              download="Ranparia_Keshav_CV.pdf"
+              target="_blank"
+              class="mobile-link inline-flex items-center gap-2 rounded-full border border-[#000814]/25 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+            >
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Download CV</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="scroll-mt-20 px-5 pb-20 pt-28 md:px-8 md:pt-36">
+        <div class="mx-auto max-w-6xl">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-6 border-b border-[#000814]/10">
+            <div>
+              <p class="text-lg sm:text-xl md:text-2xl font-normal tracking-wide text-[#000814]/70 mb-2">
+                Hello I am ,
+              </p>
+              <h1 class="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold tracking-tight text-[#000814] leading-[0.95]">
+                Keshav.
+              </h1>
+              <p class="mt-4 text-base sm:text-xl font-normal text-[#000814]/75">
+                Creative Front End Developer
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href="Ranparia%20Keshav.pdf"
+                  download="Ranparia_Keshav_CV.pdf"
+                  target="_blank"
+                  class="group inline-flex items-center gap-2 rounded-full border border-[#000814]/25 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+                >
+                  <svg class="h-4 w-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <span>Download CV</span>
+                </a>
+                <a
+                  href="#contact"
+                  class="inline-flex items-center rounded-full border border-[#000814]/25 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:items-end justify-end text-left md:text-right pt-2 md:pt-0">
+              <span class="text-xs sm:text-sm uppercase tracking-widest text-[#000814]/60 mb-1.5" id="live-date"></span>
+              <div class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#000814] tabular-nums" id="live-clock"></div>
+            </div>
+          </div>
+
+          <figure class="mt-10 overflow-hidden rounded-2xl border border-[#000814]/10 bg-[#000814]/5 shadow-[0_12px_40px_-15px_rgba(0,8,20,0.12)]">
+            <img
+              src="assets/Hero.jpg"
+              alt="Portrait of Keshav"
+              class="h-[42vh] w-full object-cover object-center sm:h-[52vh] md:h-[64vh] lg:h-[72vh]"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=80';"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section id="about" class="scroll-mt-24 border-t border-[#000814]/10 px-5 py-20 md:px-8 md:py-28">
+        <div class="mx-auto max-w-4xl">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#dda15e] font-semibold">About</p>
+          <h2 class="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#000814] leading-tight">
+            I design &amp; build experiences
+          </h2>
+          <div class="mt-8 space-y-6 text-lg sm:text-xl leading-relaxed text-[#000814]/75">
+            <p>
+              Hi, I’m Keshav Ranpariya, a passionate MERN Stack Developer who enjoys turning ideas into modern, responsive, and user-friendly web applications. I work with technologies like React.js, Node.js, Express.js, and MongoDB, and have experience building full-stack applications with authentication, APIs, databases, and third-party integrations.
+            </p>
+            <p>
+              I enjoy learning new technologies, solving development problems, and continuously improving my skills by building real-world projects. My goal is to create web applications that are not only functional but also provide a smooth and engaging user experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="scroll-mt-24 border-t border-[#000814]/10 px-5 py-20 md:px-8 md:py-28">
+        <div class="mx-auto max-w-6xl">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#dda15e] font-semibold">Work</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#000814]">Projects</h2>
+          <div class="mt-12 grid gap-6 sm:grid-cols-2">
+            <article class="flex flex-col rounded-2xl border border-[#000814]/10 bg-[#000814]/[0.02] p-7 transition duration-300 hover:border-[#dda15e] hover:shadow-lg hover:bg-white/40">
+              <h3 class="text-2xl font-bold text-[#000814]">Chatbot</h3>
+              <p class="mt-3 flex-1 text-base leading-relaxed text-[#000814]/70">
+                Full-stack AI chatbot platform with user authentication, Gemini-powered conversations, paid
+                subscription tiers, persistent chat history, admin controls, and Razorpay.
+              </p>
+              <a
+                href="https://github.com/Ranpariya-Keshav/Chatbot"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-flex w-fit items-center rounded-full border border-[#000814]/25 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+              >
+                Visit project
+              </a>
+            </article>
+            <article class="flex flex-col rounded-2xl border border-[#000814]/10 bg-[#000814]/[0.02] p-7 transition duration-300 hover:border-[#dda15e] hover:shadow-lg hover:bg-white/40">
+              <h3 class="text-2xl font-bold text-[#000814]">Mini Docs</h3>
+              <p class="mt-3 flex-1 text-base leading-relaxed text-[#000814]/70">
+                A React and Vite docs app for quick task notes — a small, fast interface for capturing and
+                organizing documents.
+              </p>
+              <a
+                href="https://github.com/Ranpariya-Keshav/Mini-Docs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-flex w-fit items-center rounded-full border border-[#000814]/25 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+              >
+                Visit project
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="scroll-mt-24 border-t border-[#000814]/10 px-5 py-20 md:px-8 md:py-28">
+        <div class="mx-auto max-w-6xl">
+          <p class="text-xs uppercase tracking-[0.28em] text-[#dda15e] font-semibold">Connect</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#000814]">Contact</h2>
+          <p class="mt-4 max-w-xl text-base sm:text-lg text-[#000814]/75 leading-relaxed">
+            I am always open to discussing new projects, creative ideas, or opportunities to collaborate. Feel free to reach out and connect through any of the channels below.
+          </p>
+          <ul class="mt-10 flex flex-wrap gap-3">
+            <li>
+              <a
+                href="mailto:keshav@example.com"
+                class="inline-flex items-center rounded-full border border-[#000814]/20 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+              >
+                Email
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/your-handle"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center rounded-full border border-[#000814]/20 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Ranpariya-Keshav"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center rounded-full border border-[#000814]/20 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="Ranparia%20Keshav.pdf"
+                download="Ranparia_Keshav_CV.pdf"
+                target="_blank"
+                class="inline-flex items-center gap-2 rounded-full border border-[#000814]/20 bg-transparent px-5 py-2.5 text-sm font-normal text-[#000814] transition duration-200 hover:border-[#dda15e] hover:bg-[#dda15e]/15 hover:text-[#dda15e]"
+              >
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download CV
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[#000814]/10 bg-[#f8f9fa] px-5 py-8 md:px-8">
+      <div class="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-base sm:text-lg font-bold tracking-tight text-[#000814]">
+          Ranpariya Keshav
+        </div>
+        <div class="flex items-center gap-3 text-xs sm:text-sm text-[#000814]/70 tabular-nums">
+          <span id="footer-date"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-[#dda15e]"></span>
+          <span id="footer-clock" class="font-bold text-[#000814]"></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
